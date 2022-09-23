@@ -1,0 +1,67 @@
+title: Simple Configuration Server
+description: A server for hosting configuration files and variables that's designed to be simple to deploy and use
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+theme: "just-the-docs"
+
+permalink: pretty
+exclude:
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "README.md"
+
+search_enabled: false
+
+heading_anchors: true
+
+aux_links_new_tab: true
+
+# External navigation links
+nav_external_links:
+  - title: GitLab Repository
+    url: https://gitlab.com/tom-brouwer/simple-configuration-server
+  - title: GitHub Repository
+    url: https://github.com/tom-brouwer/simple-configuration-server
+
+footer_content: "Copyright &copy; 2022 Tom Brouwer. Shared under <a href=\"https://github.com/tom-brouwer/simple-configuration-server-website/tree/main/LICENSE\">MIT license.</a>"
+
+# Footer last edited timestamp
+last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
+last_edit_time_format: "%FT%H:%M%z" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
+
+
+# Footer "Edit this page on GitHub" link text
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/tom-brouwer/simple-configuration-server-website" # the github URL for your repo
+gh_edit_branch: "main" # the branch that your docs is served from
+gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
+
+# Color scheme currently only supports "dark", "light"/nil (default), or a custom scheme that you define
+color_scheme: nil
+
+callouts_level: quiet
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
