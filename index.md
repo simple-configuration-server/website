@@ -3,7 +3,7 @@ layout: default
 title: "Features"
 description: "A server for hosting configuration files and variables that's designed to be simple to deploy and use"
 permalink: "/"
-sort_order: 1
+nav_order: 1
 ---
 # Simple Configuration Server (SCS)
 With SCS, you can host directories with configuration files and variables
@@ -17,7 +17,7 @@ however, SCS offers the following:
 * **Seperation of Secrets**: Using the `!scs-secret` YAML-tag you can reference
   secrets stored in a seperate location. In combination with the templating
   system you can completely seperate your configuration from secrets. This
-  allows you to securely version-control your configuration using Git.
+  allows you to securely _version-control your configuration using Git_.
 * **POST requests with template variables**: Clients can send one or more
   template variables via POST requests, to include server-specific configuration
   parameters in returned configuraiton files, such as path to specific
