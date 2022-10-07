@@ -6,6 +6,11 @@ permalink: "/"
 nav_order: 1
 ---
 # Simple Configuration Server (SCS)
+
+{: .fs-6 .fw-300 }
+A Server for hosting configuration files and variables that's designed to
+be simple do deploy and use
+
 With SCS, you can host directories with configuration files and variables
 directly over HTTP(S), like any other file-server. Unlike simple file-servers
 however, SCS offers the following:
