@@ -2,7 +2,7 @@
 layout: default
 title: "Local Installation"
 description: "Install SCS locally to test extensions or debug the server"
-permalink: "/docs/deployment/local-installation.html"
+permalink: "/docs/deployment/local-installation"
 nav_order: 2
 grand_parent: Documentation
 parent: Deployment

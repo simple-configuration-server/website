@@ -2,7 +2,7 @@
 layout: default
 title: "Example"
 description: "An illustration of SCS features"
-permalink: "/example.html"
+permalink: "/example"
 nav_order: 2
 ---
 # SCS Basic Example
@@ -26,7 +26,7 @@ As an example, you can create a directory containing the following files.
 |   | # Resources in the secrets/ directory can be referenced using the
 |   | # !scs-secret yaml tag
 |   ├── database-users.yaml (Database user data)
-|   └── scs-tokens.yaml (Access tokens for user of the server)
+|   └── scs-tokens.yaml (Access tokens for the SCS users)
 └── config
     | # All files or templates under the config/ folder, except the ones ending
     | # in scs-env.yaml, are hosted under the configs/ url path of the server
@@ -59,7 +59,7 @@ in Git, without including any secrets.
 
 ### File Contents
 For reference, the contents of each file in the above structure, used in this
-example, are provided below. These contain some example of using the
+example, are provided below. These contain some examples of using the
 templating system inside configuration files, and how 'secrets' and 'common'
 configuration variables can be included in endpoints.
 
@@ -209,7 +209,7 @@ response:
 </details>
 
 ## Usage
-After deploying the SCS with this file-structure (See ADD REFERENCE),
+After deploying the SCS with this file-structure (See [Deployment Docs](./docs/deployment)),
 you can query each using the token of the example user (See 
 'scs-users.yaml' and 'secrets/scs-tokens.yaml' above). For example,
 using curl:
@@ -247,4 +247,5 @@ curl http://localhost:5000/configs/server1/db-config.json.template --header "Aut
 Note that this is a simple example that illustrates the main features of SCS.
 For a more in-depth example of how you can use Git to version control your
 configurations, and use the CI/CD or Workflow system of common Git platforms
-to build a Docker image for your configuration, please see (ADD REFERENCE).
+to build a Docker image for your configuration, please take a look at the
+[example-scs-configuration repository](https://github.com/Tom-Brouwer/example-scs-configuration).

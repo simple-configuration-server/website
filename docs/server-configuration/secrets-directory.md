@@ -2,7 +2,7 @@
 layout: default
 title: "Secrets Directory"
 description: "Use the secrets directory to store your secrets seperatly"
-permalink: "/docs/server-configuration/secrets-directory.html"
+permalink: "/docs/server-configuration/secrets-directory"
 nav_order: 4
 grand_parent: Documentation
 parent: Server Configuration
@@ -13,7 +13,7 @@ parent: Server Configuration
 Use the 'directories.secrets' variable inside scs-configuration.yaml to set
 the location of this directory
 
-This directory works just like the 'common' directory (ADD REFERENCE). By
+This directory works just like the ['common' directory](./common-directory). By
 defining secrets in a seperate directory, you can completely seperate your
 secrets from the configuration files itself, meaning you can safely store
 the rest of the configuration (everything, except the Secrets Directory

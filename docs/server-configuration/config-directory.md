@@ -2,7 +2,7 @@
 layout: default
 title: "Config Directory"
 description: "Describes the layout of the Config Directory"
-permalink: "/docs/server-configuration/config-directory.html"
+permalink: "/docs/server-configuration/config-directory"
 nav_order: 2
 grand_parent: Documentation
 parent: Server Configuration

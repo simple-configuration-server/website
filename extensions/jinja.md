@@ -2,7 +2,7 @@
 layout: default
 title: "Jinja"
 description: "Develop Jinja extensions to extend the SCS templating system"
-permalink: "/extensions/jinja.html"
+permalink: "/extensions/jinja"
 nav_order: 4
 parent: Extensions
 ---

@@ -2,7 +2,7 @@
 layout: default
 title: "Validation Script Config"
 description: "Use the scs-users.yaml file to define user accounts your deployment"
-permalink: "/docs/server-configuration/validation-script-configuration.html"
+permalink: "/docs/server-configuration/validation-script-configuration"
 nav_order: 5
 grand_parent: Documentation
 parent: Server Configuration

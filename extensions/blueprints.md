@@ -2,7 +2,7 @@
 layout: default
 title: "(Auth) Blueprints"
 description: "Develop blueprint extensions manipulate requests and responses"
-permalink: "/extensions/blueprints.html"
+permalink: "/extensions/blueprints"
 nav_order: 3
 parent: Extensions
 ---

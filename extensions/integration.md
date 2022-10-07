@@ -2,7 +2,7 @@
 layout: default
 title: "Integration"
 description: "When developing an extension, make use of the SCS Error Handling and logging facilities"
-permalink: "/extensions/integration.html"
+permalink: "/extensions/integration"
 nav_order: 1
 parent: Extensions
 ---

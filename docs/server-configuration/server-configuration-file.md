@@ -2,7 +2,7 @@
 layout: default
 title: "Server Configuration File"
 description: "Describes the available options for scs-configuration.yaml"
-permalink: "/docs/server-configuration/config-file.html"
+permalink: "/docs/server-configuration/config-file"
 nav_order: 1
 grand_parent: Documentation
 parent: Server Configuration
@@ -75,7 +75,8 @@ By default `environments.cache` is true, meaning scs-env.yaml files are only
 loaded once at startup. If you make changes to these files, with this set to
 true, you'll have to restart the server.
 
-The `environments.reject_keys_containing_dots` is discussed here (ADD REFERENCE)
+The `environments.reject_keys_containing_dots` is discussed on
+[this page](./common-directory).
 
 ## 2 Templates Configuration
 By default, `templates.cache` is true, meaning that if you change endpoint
@@ -97,7 +98,7 @@ to specify new values for these. Setting an empty object for this will still
 cause the default settings to be applied. If you need to use alternative
 rendering_options for specific endpoints, you can also define
 `template.rendering_options` in scs-env.yaml files, which will update any
-globally defined rendering options for specific endpoints. (ADD REFERENCE)
+globally defined rendering options for specific endpoints ([More info](/config-directory.html#1-scs-envyaml-files)).
 
 ## 3 Logs Configuration
 The SCS creates 2 types of logs:
@@ -117,7 +118,7 @@ The SCS creates 2 types of logs:
 
 {: .note }
 The set of audit event types listed under (1) can be extended by
-third party modules, see section 'development' (ADD REFERENCE)
+third party modules, as described [here](/extensions/integration#2-logging)
 
 The SCS produces logs in the JSON-lines format by default. Please see the
 AppLogFormatter and AuditLogFormatter classes in the
@@ -126,8 +127,8 @@ for the exact format of these.
 
 Using the configuration file you can set the logs to output to a log
 file, which is auto-rotated by SCS. Use this in combination with a log
-centralization agent, like Elastic Filebeat, to centralize your logs. For an
-example on how to do this, please see the 'deployment' section (ADD REFERENCE).
+centralization agent, like Elastic Filebeat, to centralize your logs. An example
+of how to do this can be found [here](/docs/deployment/log-centralization)
 
 Alternatively you can simply output the logs to the console, by setting the
 stdout option. In this case you can for example see the logs via the
@@ -170,4 +171,5 @@ whitelisted network(s).
 You can extend the core-functionality of SCS at runtime, by defining extensions.
 Extensions are third-party Python packages that add more functionality to SCS.
 For a description of the different types of extensions that are supported,
-including considerations for development of these, see (ADD REFERENCE)
+including considerations for development of these, please see the
+[extensions documentation](/extensions).

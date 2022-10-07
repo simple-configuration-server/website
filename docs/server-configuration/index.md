@@ -2,7 +2,7 @@
 layout: default
 title: "Server Configuration"
 description: "Describes the configuration options for the server"
-permalink: "/docs/server-configuration.html"
+permalink: "/docs/server-configuration"
 nav_order: 1
 parent: Documentation
 has_children: true

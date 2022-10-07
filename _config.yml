@@ -19,9 +19,7 @@ aux_links_new_tab: true
 
 # External navigation links
 nav_external_links:
-  - title: GitLab Repository
-    url: https://gitlab.com/tom-brouwer/simple-configuration-server
-  - title: GitHub Repository
+  - title: SCS on GitHub
     url: https://github.com/tom-brouwer/simple-configuration-server
 
 footer_content: "Copyright &copy; 2022 Tom Brouwer. Shared under <a href=\"https://github.com/tom-brouwer/simple-configuration-server-website/tree/main/LICENSE\">MIT license.</a>"

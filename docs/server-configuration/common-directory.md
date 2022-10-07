@@ -2,7 +2,7 @@
 layout: default
 title: "Common Directory"
 description: "Use the common directory to store common configuration variables"
-permalink: "/docs/server-configuration/common-directory.html"
+permalink: "/docs/server-configuration/common-directory"
 nav_order: 3
 grand_parent: Documentation
 parent: Server Configuration
@@ -46,4 +46,4 @@ Since dots are used as a level seperator in relative references,
 it's advised not to use keys containing dots in these files. By default, the
 SCS will raise an error on startup if this is the case. If you need keys with
 dots, disable this check by setting 'environments.reject_keys_containing_dots'
-to false in scs-configuration.yaml (ADD REFERENCE)
+to false in scs-configuration.yaml.

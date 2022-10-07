@@ -2,7 +2,7 @@
 layout: default
 title: "Log Centralization"
 description: "Centralizing your SCS logs using the Elastic Stack"
-permalink: "/docs/deployment/log-centralization.html"
+permalink: "/docs/deployment/log-centralization"
 nav_order: 3
 grand_parent: Documentation
 parent: Deployment

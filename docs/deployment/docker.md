@@ -2,12 +2,18 @@
 layout: default
 title: "Docker"
 description: "Use the official docker image to deploy SCS"
-permalink: "/docs/deployment/docker.html"
+permalink: "/docs/deployment/docker"
 nav_order: 1
 grand_parent: Documentation
 parent: Deployment
 ---
 # Docker Deployment
+
+{: .note}
+Future Docker image of SCS will be shared through the GitHub
+container registry. With the next release, the below links will be updated
+accordingly
+
 The official SCS Docker image is published in the SCS GitLab container
 registry:
 ```

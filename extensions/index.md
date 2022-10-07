@@ -2,7 +2,7 @@
 layout: default
 title: "Extensions"
 description: "You can develop and/or use Python packages to extend SCS at runtime"
-permalink: "/extensions.html"
+permalink: "/extensions"
 nav_order: 4
 has_children: true
 ---

@@ -2,7 +2,7 @@
 layout: default
 title: "YAML Constructors"
 description: "Develop YAML constructors to be able to use custom YAML tags"
-permalink: "/extensions/yaml-constructors.html"
+permalink: "/extensions/yaml-constructors"
 nav_order: 2
 parent: Extensions
 ---

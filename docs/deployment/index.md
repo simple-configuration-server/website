@@ -2,7 +2,7 @@
 layout: default
 title: "Deployment"
 description: "Describes considerations for deploying the SCD"
-permalink: "/docs/deployment.html"
+permalink: "/docs/deployment"
 nav_order: 2
 parent: Documentation
 has_children: true
