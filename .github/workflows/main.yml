@@ -3,7 +3,7 @@ name: Deploy Jekyll site to Pages
 on:
   push:
     tags:
-      - '*'
+      - 'v*'
 
 permissions:
   contents: read
