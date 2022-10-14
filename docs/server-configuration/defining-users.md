@@ -27,7 +27,7 @@ A simple scs-users.yaml, containg only 1 user, could look like:
       from_networks:
         - 127.0.0.1/32
 ```
-All properties are required, as defined in the [schema](https://github.com/simple-configuration-server/simple-configuration-server/blob/master/scs/schemas/scs-users.yaml).
+All properties are required, as defined in the [schema](https://github.com/simple-configuration-server/simple-configuration-server/blob/main/scs/schemas/scs-users.yaml).
 
 You always have to whitelist both the 'paths' as well as the
 'from_networks' for each user. You can use '*' as a wildcard character in the

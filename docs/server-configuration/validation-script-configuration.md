@@ -11,9 +11,9 @@ parent: Server Configuration
 
 {: .note }
 The 'scs-validate.yaml' file described on this page is only needed if you're
-planning to run the [validate.py script](https://github.com/simple-configuration-server/simple-configuration-server/blob/master/docker/validate.py) from the docker image. For an example of how to use the validate.py script to test
-your configuration, please see the [githook](https://github.com/simple-configuration-server/example-configuration/blob/master/.githooks/pre-commit)
-and/or the [GitHub Workflow](https://github.com/simple-configuration-server/example-configuration/blob/master/.github/workflows/main.yml)
+planning to run the [validate.py script](https://github.com/simple-configuration-server/simple-configuration-server/blob/main/docker/validate.py) from the docker image. For an example of how to use the validate.py script to test
+your configuration, please see the [githook](https://github.com/simple-configuration-server/example-configuration/blob/main/.githooks/pre-commit)
+and/or the [GitHub Workflow](https://github.com/simple-configuration-server/example-configuration/blob/main/.github/workflows/main.yml)
 in the 'example-configuration' repository.
 
 

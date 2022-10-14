@@ -52,7 +52,7 @@ response:
   headers:  # Set headers on the response
     Content-Type: text/plain
 ```
-These files should adhere to the schema found [here](https://github.com/simple-configuration-server/simple-configuration-server/blob/master/scs/schemas/scs-env.yaml),
+These files should adhere to the schema found [here](https://github.com/simple-configuration-server/simple-configuration-server/blob/main/scs/schemas/scs-env.yaml),
 which also includes more extensive descriptions of each property. Note that
 this schema also defines the defaults for each property, used when properties
 are not defined. All properties in scs-env files are optional, but empty

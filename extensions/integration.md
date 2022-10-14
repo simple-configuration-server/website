@@ -9,13 +9,13 @@ parent: Extensions
 # Integration
 From you extension, you can use various core-features of the SCS, to make sure
 your extension fully integrates with existing SCS deployments. Use the
-core [scs.errors](https://github.com/simple-configuration-server/simple-configuration-server/blob/master/scs/errors.py)
+core [scs.errors](https://github.com/simple-configuration-server/simple-configuration-server/blob/main/scs/errors.py)
 module to ensure any errors can be understood by the users and use the
-[scs.logging](https://github.com/simple-configuration-server/simple-configuration-server/blob/master/scs/logging.py)
+[scs.logging](https://github.com/simple-configuration-server/simple-configuration-server/blob/main/scs/logging.py)
 module to ensure all relevant events are logged inside the SCS logs.
 
 ## 1 Custom Error Responses
-Use the [scs.errors](https://github.com/simple-configuration-server/simple-configuration-server/blob/master/scs/errors.py)
+Use the [scs.errors](https://github.com/simple-configuration-server/simple-configuration-server/blob/main/scs/errors.py)
 module inside your extension to add
 custom error responses to SCS. There are 2 types of errors that can be
 registered with the scs.errors module:
@@ -77,11 +77,11 @@ It's good practice to prefix the error-id with your package name, since
 your ids may otherwise overlap with errors registered by other modules.
 
 For further examples on how to use the above error handling, also take a look
-at the [SCS source code](https://github.com/simple-configuration-server/simple-configuration-server/tree/master/scs),
+at the [SCS source code](https://github.com/simple-configuration-server/simple-configuration-server/tree/main/scs),
 since errors and exceptions are registered by multiple built-in SCS modules.
 
 ## 2 Logging
-Use the [scs.logging](https://github.com/simple-configuration-server/simple-configuration-server/blob/master/scs/logging.py) inside your extension to:
+Use the [scs.logging](https://github.com/simple-configuration-server/simple-configuration-server/blob/main/scs/logging.py) inside your extension to:
 1. Log custom audit events
 2. Log to the SCS application log
 
