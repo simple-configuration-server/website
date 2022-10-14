@@ -32,7 +32,7 @@ however, SCS offers the following:
   the urls users can access, and the IP-addresses/subnets they can access them
   from.
 * **Extendability**: The SCS core functionality can be further extended at
-* runtime, by configuring any of the following in the configuration file:
+  runtime, by configuring any of the following in the configuration file:
     1. A custom Flask blueprint for authentication, to replace the
        default SCS user authentication system mentioned above
     2. Additional YAML tag constructors, with functions you can use to

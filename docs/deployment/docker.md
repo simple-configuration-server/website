@@ -8,16 +8,10 @@ grand_parent: Documentation
 parent: Deployment
 ---
 # Docker Deployment
-
-{: .note}
-Future Docker image of SCS will be shared through the GitHub
-container registry. With the next release, the below links will be updated
-accordingly
-
-The official SCS Docker image is published in the SCS GitLab container
-registry:
+The official SCS Docker image is published in the
+[SCS GitHub container registry](https://github.com/simple-configuration-server/simple-configuration-server/pkgs/container/simple-configuration-server):
 ```
-registry.gitlab.com/tom-brouwer/simple-configuration-server:$VERSION
+ghcr.io/simple-configuration-server/simple-configuration-server:$VERSION
 ```
 
 There are two ways to deploy SCS using Docker:
@@ -34,7 +28,7 @@ version: "3.9"
 
 services:
   server:
-    image: registry.gitlab.com/tom-brouwer/simple-configuration-server:1.0.1
+    image: ghcr.io/simple-configuration-server/simple-configuration-server:1.0.3
     volumes:
       # If all configuration, except secrets, are in a repository:
       - ./configuration-repository/configuration:/etc/scs/configuration
