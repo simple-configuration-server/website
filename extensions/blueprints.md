@@ -47,6 +47,6 @@ extensions:
 ## 2 Authentication Extension
 The same considerations as above apply to developing an authentication
 extension for SCS. You can use the source-code of the built-in
-[scs.auth](https://github.com/Tom-Brouwer/simple-configuration-server/blob/master/scs/auth.py)
+[scs.auth](https://github.com/simple-configuration-server/simple-configuration-server/blob/master/scs/auth.py)
 module for inspiration. Make sure to integrate your auth module with the
 logging module, so important authentication events are logged to the audit log.

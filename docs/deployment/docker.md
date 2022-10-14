@@ -73,5 +73,5 @@ The second option takes more work to set-up, but enables you to version control
 your complete configuration, including SCS version and possible extensions.
 An example of using Gitlab CI/CD or Github Actions to build a custom
 Docker image can be found in the
-[example-scs-configuration](https://gitlab.com/tom-brouwer/example-scs-configuration)
+[example-scs-configuration](https://gitlab.com/simple-configuration-server/example-configuration)
 repository.

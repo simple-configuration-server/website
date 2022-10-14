@@ -248,4 +248,4 @@ Note that this is a simple example that illustrates the main features of SCS.
 For a more in-depth example of how you can use Git to version control your
 configurations, and use the CI/CD or Workflow system of common Git platforms
 to build a Docker image for your configuration, please take a look at the
-[example-scs-configuration repository](https://github.com/Tom-Brouwer/example-scs-configuration).
+[example-scs-configuration repository](https://github.com/simple-configuration-server/example-configuration).

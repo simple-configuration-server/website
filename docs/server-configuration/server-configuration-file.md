@@ -68,7 +68,7 @@ extensions:  # See section 5 below
 Note that only the 'directories', 'logs' and 'auth' top-level properties are
 required. A full description of the format of this file, including the defaults
 that are used if properties are not defined, can be found in the
-[scs-configuration.yaml schema](https://github.com/Tom-Brouwer/simple-configuration-server/blob/master/scs/schemas/scs-configuration.yaml).
+[scs-configuration.yaml schema](https://github.com/simple-configuration-server/simple-configuration-server/blob/master/scs/schemas/scs-configuration.yaml).
 
 ## 1 Environment Configuration
 By default `environments.cache` is true, meaning scs-env.yaml files are only
@@ -92,7 +92,7 @@ may fail.
 
 `templates.rendering_options` sets the default rendering options for jinja2
 templates (See options [here](https://jinja.palletsprojects.com/en/3.0.x/api/#jinja2.Environment.overlay)).
-Note that the [configuration file schema](https://github.com/Tom-Brouwer/simple-configuration-server/blob/master/scs/schemas/scs-configuration.yaml)
+Note that the [configuration file schema](https://github.com/simple-configuration-server/simple-configuration-server/blob/master/scs/schemas/scs-configuration.yaml)
 already defines global defaults. If you want to override the defaults, you need
 to specify new values for these. Setting an empty object for this will still
 cause the default settings to be applied. If you need to use alternative
@@ -122,7 +122,7 @@ third party modules, as described [here](/extensions/integration#2-logging)
 
 The SCS produces logs in the JSON-lines format by default. Please see the
 AppLogFormatter and AuditLogFormatter classes in the
-[logging module](https://github.com/Tom-Brouwer/simple-configuration-server/blob/master/scs/logging.py)
+[logging module](https://github.com/simple-configuration-server/simple-configuration-server/blob/master/scs/logging.py)
 for the exact format of these.
 
 Using the configuration file you can set the logs to output to a log

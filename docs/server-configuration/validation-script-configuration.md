@@ -11,7 +11,7 @@ parent: Server Configuration
 
 {: .note }
 The 'scs-validate.yaml' file described on this page is only needed if you're
-planning to run the [validate.py script](https://github.com/Tom-Brouwer/simple-configuration-server/blob/master/docker/validate.py) from the docker image.
+planning to run the [validate.py script](https://github.com/simple-configuration-server/simple-configuration-server/blob/master/docker/validate.py) from the docker image.
 
 
 If you're planning to use the validation script in your CI/CD pipeline or

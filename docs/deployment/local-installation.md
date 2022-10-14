@@ -15,7 +15,7 @@ recommended. Please use the Docker image instead
 
 To create a local installation of SCS, for example for debugging or testing
 extensions, you can clone the
-[simple-configuration-server repository](https://github.com/Tom-Brouwer/simple-configuration-server)
+[simple-configuration-server repository](https://github.com/simple-configuration-server/simple-configuration-server)
 locally. Below is a basic example of using uWSGI to run the application.
 You will need:
 

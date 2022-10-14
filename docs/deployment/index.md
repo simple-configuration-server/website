@@ -21,5 +21,5 @@ logs to a central logging database.
 
 {: .note}
 Prior to deploying to production, please consider the
-[security recommendations in SECURITY.md ](https://github.com/Tom-Brouwer/simple-configuration-server/blob/master/SECURITY.md#3-securing-scs-deployments)
+[security recommendations in the security policy](https://github.com/simple-configuration-server/simple-configuration-server/security/policy#3-securing-scs-deployments)
 first
