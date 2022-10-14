@@ -7,14 +7,15 @@ nav_order: 2
 ---
 # SCS Basic Example
 This page gives a quick demonstration of how the Simple Configuration Server
-can be used to host configuration variables and configuration file templates.
+can be used to host configuration variables and configuration file templates
+from a set of files.
 
 ## File Structure
 The URL structure for the '/configs/' endpoints of a SCS deployment is
 derived from the directory containing configuration variables and configation
 file(s) (templates).
 
-As an example, you can create a directory containing the following files.
+As an example, you can create the file-structure below:
 ```
 .
 ├── scs-configuration.yaml (Main SCS configuration file)
@@ -44,24 +45,27 @@ As an example, you can create a directory containing the following files.
         └── scs-env.yaml (Variables that apply to  all server1/* endpoints) 
 ```
 The scs-configuration.yaml file references the locations of all relevant folders
-(common, config, secrets) and the scs-users.yaml file, relative to the
-folder that's configured for the *SCS_CONFIG_DIR* environment variable (See
-scs-configuration.yaml contents below). In the above example, the root folder
-of the file structure should be set as the *SCS_CONFIG_DIR*.
+(common, config, secrets) as well as the location of the scs-users.yaml file,
+relative to the folder that's configured for the *SCS_CONFIG_DIR* environment
+variable (See scs-configuration.yaml contents below). In the above example,
+the root folder of the file structure should be set as the *SCS_CONFIG_DIR*.
 
 The 'common/' and 'secrets/' folders contain Yaml files with common configuration
-variables, and secrets. The 'config/' folders contains all endpoints of the
-server, and all files ending in 'scs-env.yaml' contain configuration variables
-and settings related to one endpoint, or a folder of endpoints. From inside the
-'scs-env.yaml' file, you can reference the contents of the 'common/' and
-'secrets/' folders using YAML tags. This way, you can put your configurations
-in Git, without including any secrets.
+variables, and secrets.
+
+The 'config/' folders contains all endpoints of the server. All files
+ending with 'scs-env.yaml' contain configuration variables and settings related
+to one endpoint, or a folder with endpoints. From inside the 'scs-env.yaml' file,
+you can reference the contents of the 'common/' and 'secrets/' folders using
+YAML tags. This way, you can put your configurations in Git, without including
+any secrets. All files under the 'config/' folder, that do not end with
+'scs-env.yaml', are hosted as endpoints of the server.
 
 ### File Contents
-For reference, the contents of each file in the above structure, used in this
-example, are provided below. These contain some examples of using the
-templating system inside configuration files, and how 'secrets' and 'common'
-configuration variables can be included in endpoints.
+For reference, the contents of each file in the above structure, are provided
+below. The files used in this example illustrate how the templating system
+can be used for configuration files, and how 'secrets' and 'common'
+configuration variables can be referenced.
 
 <details markdown="1"><summary>scs-configuration.yaml</summary>
 ```yaml
@@ -102,8 +106,8 @@ auth:
 <details markdown="1"><summary>common/global.yaml</summary>
 ```yaml
 database:
-    host: 172.16.48.55
-    port: 1234
+  host: 172.16.48.55
+  port: 1234
 ```
 </details>
 
@@ -139,10 +143,10 @@ example-user: example-user-token
 ```yaml
 template:
   context:
-      users: !scs-secret 'database-users.yaml'
+    users: !scs-secret 'database-users.yaml'
 response:
   headers:
-      Content-Type: application/json
+    Content-Type: application/json
 ```
 </details>
 
@@ -163,12 +167,12 @@ response:
 ```yaml
 template:
   context:
-      database: !scs-common 'global.yaml#database'
-      username: !scs-secret 'database-users.yaml#[0].username'
-      password: !scs-secret 'database-users.yaml#[1].password'
+    database: !scs-common 'global.yaml#database'
+    username: !scs-secret 'database-users.yaml#[0].username'
+    password: !scs-secret 'database-users.yaml#[1].password'
   response:
-      headers:
-          Content-Type: application/json
+    headers:
+      Content-Type: application/json
 ```
 </details>
 
@@ -200,17 +204,17 @@ production
 <details markdown="1"><summary>config/server1/scs-env.yaml</summary>
 ```yaml
 template:
-    context:
-        server_number: 1
+  context:
+    server_number: 1
 response:
-    headers:
-        Content-Type: text/plain
+  headers:
+    Content-Type: text/plain
 ```
 </details>
 
 ## Usage
 After deploying the SCS with this file-structure (See [Deployment Docs](./docs/deployment)),
-you can query each using the token of the example user (See 
+you can query every endpoint the token of the example user (See
 'scs-users.yaml' and 'secrets/scs-tokens.yaml' above). For example,
 using curl:
 ```bash

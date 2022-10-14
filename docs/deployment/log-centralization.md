@@ -40,12 +40,12 @@ To use the built image, add a service to the Docker compose-file of your SCS
 deployment, for example:
 ```yaml
 filebeat:
-    image: filebeat-scs
-    environment:
-      # See https://www.elastic.co/guide/en/beats/filebeat/8.2/running-on-docker.html
-      # for more configuration options
-      - output.elasticsearch.hosts=${ELASTICSEARCH_HOSTS:?error}
-    volumes:
-      # The logs are shared between the containers using a Docker volume
-      - scs-logs:/var/log/scs
+  image: filebeat-scs
+  environment:
+    # See https://www.elastic.co/guide/en/beats/filebeat/8.2/running-on-docker.html
+    # for more configuration options
+    - output.elasticsearch.hosts=${ELASTICSEARCH_HOSTS:?error}
+  volumes:
+    # The logs are shared between the containers using a Docker volume
+    - scs-logs:/var/log/scs
 ```

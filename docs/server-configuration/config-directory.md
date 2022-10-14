@@ -16,12 +16,12 @@ the location of this directory
 The contents of this directory are served by the SCS, with the exception of
 files with names that end with 'scs-env.yaml'. These files contain
 configuration variables for specific endpoints, or entire directories.
-The URL structure of the SCS is derived from the folder structure inside your
-config directory.
+The URL structure of your SCS deployment is derived from the folder structure
+inside the config directory.
 
 ## 1 *scs-env.yaml Files
-Using scs-env.yaml files is optional, but allows you to configure the
-variables for the templating system, configure the validation of requests and
+Although scs-env.yaml files are optional, they allow you to configure the
+variables for the templating system and the validation of requests and
 responses of each endpoint. Below is a full example of all options that can be
 set in a *scs-env.yaml file:
 ```yaml
@@ -52,11 +52,11 @@ response:
   headers:  # Set headers on the response
     Content-Type: text/plain
 ```
-This files should adhere to the schema found [here](https://github.com/simple-configuration-server/simple-configuration-server/blob/master/scs/schemas/scs-env.yaml),
+These files should adhere to the schema found [here](https://github.com/simple-configuration-server/simple-configuration-server/blob/master/scs/schemas/scs-env.yaml),
 which also includes more extensive descriptions of each property. Note that
 this schema also defines the defaults for each property, used when properties
 are not defined. All properties in scs-env files are optional, but empty
-scs-env files should be removed.
+scs-env files should be omitted.
 
 In case you simply want to host the files in your config directory,
 without using any of the templating features, you can place the
@@ -93,10 +93,10 @@ Similairly, the following apply to './subdirectory/sub_endpoint2':
 2. './subdirectory/scs-env.yaml'
 3. './subdirectory/sub_endpoint2.scs-env.yaml'
 
-Values of type Object (dict) of more specific scs-env files update the contents
-of less specific ones. Values with other data types are replaced, in case a
-more specific scs-env file defines them also. For example, considering the
-scs-env files for './root_endpoint.json' have the following contents:
+Values of type object (dict in python) of more specific scs-env files update
+the contents of less specific ones. Values with other data types are replaced,
+in case more specific scs-env files define them also. For example, considering
+the scs-env files for './root_endpoint.json' have the following contents:
 1. **./scs-env.yaml**
    ```yaml
    template:
@@ -119,7 +119,7 @@ scs-env files for './root_endpoint.json' have the following contents:
       X-TeaType: Rooibos
    ```
 
-Then the configuration for the endpoint would look like (excl. default values):
+Then the configuration for the endpoint would look like (excluding default values):
 ```yaml
 template:
   context:

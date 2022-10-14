@@ -19,7 +19,7 @@ Use the [scs.errors](https://github.com/simple-configuration-server/simple-confi
 module inside your extension to add
 custom error responses to SCS. There are 2 types of errors that can be
 registered with the scs.errors module:
-1. Errors based on response codes and error IDs, triggered using abort()
+1. Errors based on response codes and error IDs, triggered using `abort()`
 2. Errors based on Exceptions raised in the code
 
 You can use the first type to explicitly return errors for certain conditions,
@@ -73,8 +73,8 @@ This creates a HTTP response with a 500 status code, showing the id and
 message you provided.
 
 {: .note}
-It's good practice to include your package name inside the error id,
-since otherwise these may overlap with errors registered by other modules.
+It's good practice to prefix the error-id with your package name, since
+your ids may otherwise overlap with errors registered by other modules.
 
 For further examples on how to use the above error handling, also take a look
 at the [SCS source code](https://github.com/simple-configuration-server/simple-configuration-server/tree/master/scs),
@@ -98,7 +98,8 @@ To log custom audit events:
    )
    ```
 
-2. Use the 'add_audit_event' function added to the Flask.g object:
+2. Use the 'add_audit_event' function added to the Flask.g object while
+   handling a request:
 
    ```python
    from Flask import g
@@ -112,8 +113,8 @@ To log custom audit events:
    ```
 
 {: .note}
-As with error ids, it's advised to include your package name into
-the 'event_type' to prevent overlap with other extensions.
+As with error ids, it's advised to prefix the 'event_type' with your package
+name to prevent overlap with other extensions.
 
 To log to the application log, simply use the python logging module:
 

@@ -106,7 +106,7 @@ The SCS creates 2 types of logs:
    in the event.type field):
    * `config-loaded`: An authorized user loaded a config file
    * `secrets-loaded`: An authorized user loaded secrets
-   * `unauthenticated`: An unauthenticted client tried to access and endpoint
+   * `unauthenticated`: An unauthenticated client tried to access an endpoint
    * `rate-limited`: An IP address was rate-limited because of too many
      authentication attempts
    * `unauthorized-ip`: An authenticated user tried to access the SCS from an
@@ -141,31 +141,31 @@ used. The `auth.options` object is passed directly to the blueprint as the
 BluePrintSetupState.options attribute.
 
 {: .note }
-The below paragraph refer to the options of the built-in auth module. If you've
-set a different 'scs.auth.bp', these do not apply
+The below paragraphs refer to the options of the built-in auth module. If
+you've set a different 'scs.auth.bp', these do not apply
 
-`auth.options.users_file` defines the location of scs-users.yaml (see section
-2.5). The `directories.secrets` defines the directory to be referenced
-using the `!scs-secret` YAML tag inside the scs-users.yaml file. If you want
-to use the same folder when other secrets are kept, you can simply use a YAML
-anchor, as illustrated in the example.
+`auth.options.users_file` defines the location of [scs-users.yaml](./defining-users).
+The `directories.secrets` defines the directory to be referenced using the
+`!scs-secret` YAML tag inside the scs-users.yaml file. If you want to use the
+same folder when other secrets are kept, you can simply use a YAML anchor, as
+illustrated in the [example](#server-configuration-file).
 
 `auth.options.networks.private_only` is 'true' by default, and ensures data
 on the server can only be accessed from internal subnets.
 `auth.options.networks.whitelist` must be set, to indicate what IPs or subnets
-are allowed to access the server. It's advised to define this as restrive as
+are allowed to access the server. It's advised to define this as restrictive as
 possible. Please note that regardless of these settings, it's a good idea to
-use a firewall to controll access to the server. Although unauthorized IPs are
-not authorized to access any data, their requests can still flood the server,
+use a firewall to controll access to the server. Although unauthorized IPs
+cannot be used to access any data, their requests can still flood the server,
 possibly causing denial of service.
 
 The `auth.options.max_auth_fails_per_15_min` defines the maximum number of
-requests allowed per IP address with false authentication credentials (10
-by default). In combination with the network whitelist, this should reduce the
-chances of successfully brute-forcing the user authentication system. Even if
-attackers can spoof all IP addresses, this will limit the authentication
-attempts per 15 minutes to the value of this property times the size of your
-whitelisted network(s).
+requests allowed per IP address with false authentication credentials every 15
+minutes (10 by default). In combination with the network whitelist, this should
+reduce the chances of successfully brute-forcing the user authentication system.
+Even if attackers can spoof all IP addresses, this will limit
+the authentication attempts per 15 minutes to the value of this property
+multiplied by the size of your whitelisted network(s).
 
 ## 5 Extensions Configuration
 You can extend the core-functionality of SCS at runtime, by defining extensions.

@@ -25,16 +25,19 @@ however, SCS offers the following:
   allows you to securely _version-control your configuration using Git_.
 * **POST requests with template variables**: Clients can send one or more
   template variables via POST requests, to include server-specific configuration
-  parameters in returned configuraiton files, such as path to specific
+  parameters in returned configuration files, such as paths to specific
   directories on machines.
 * **Simple User Authentication**: The built-in user authentication system
   uses a simple file-based configuration, but allows fine-grained control over
-  the urls users can access, and the IP-addresses/Subnets they can access them
+  the urls users can access, and the IP-addresses/subnets they can access them
   from.
-* **Extendability**: At it's core, SCS is already a powerfull system, but
-  inside the 'scs-configuration.yaml' file you can further configure:
-    1. A custom Flask blueprint to use for authentication, instead of the
-       system mentioned above
-    2. Additional YAML tag constructors
-    3. Additional Flask blueprints
-    4. Additional template extensions for Jinja2
+* **Extendability**: The SCS core functionality can be further extended at
+* runtime, by configuring any of the following in the configuration file:
+    1. A custom Flask blueprint for authentication, to replace the
+       default SCS user authentication system mentioned above
+    2. Additional YAML tag constructors, with functions you can use to
+       extend the YAML language used in scs-env files.
+    3. Additional Flask blueprints that can pre- or post-process the requests
+       and responses of the server.
+    4. Additional Jinja2 template extensions, allowing you to use custom
+       functions and tags inside your configuration file templates.

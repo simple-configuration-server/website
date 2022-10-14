@@ -23,8 +23,8 @@ registry.gitlab.com/tom-brouwer/simple-configuration-server:$VERSION
 There are two ways to deploy SCS using Docker:
 1. Use the Docker image directly, and use Docker bind-mounts to expose the
    relevant folders and files to the Docker container.
-2. Build your own SCS Docker image using the official SCS image,
-   and includes your configuration files, with the exception of secrets.
+2. Build your own SCS Docker image using the official SCS image and include
+   your configuration files, with the exception of secrets.
 
 The first option is the quickest way to deploy SCS from scratch. Below is an
 example Docker compose-file for a Docker service using the official Docker
@@ -73,5 +73,5 @@ The second option takes more work to set-up, but enables you to version control
 your complete configuration, including SCS version and possible extensions.
 An example of using Gitlab CI/CD or Github Actions to build a custom
 Docker image can be found in the
-[example-scs-configuration](https://gitlab.com/simple-configuration-server/example-configuration)
+[example-configuration](https://gitlab.com/simple-configuration-server/example-configuration)
 repository.

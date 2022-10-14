@@ -20,18 +20,19 @@ in subfolders of this directory, which gives you the option to include YAML
 configuration files from other git repositories.
 
 You can reference common variables from scs-env.yaml files, using the
-'!scs-common' YAML tag. For example, given the following common directory
-layout:
+'!scs-common' YAML tag. For example, if your common directory contains a file
+called **global.yaml**, with the following contents:
+
+```yaml
+global_object:
+  key: value
+global_array:
+  - value1
+  - value2
 ```
-.
-└── global.yaml
-    > global_object:
-    >   key: value
-    > global_array:
-    >   - value1
-    >   - value2
-```
+
 These can be referenced from scs-env files, like:
+
 ```yaml
 template:
   context:

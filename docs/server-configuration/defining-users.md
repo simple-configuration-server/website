@@ -7,7 +7,7 @@ nav_order: 5
 grand_parent: Documentation
 parent: Server Configuration
 ---
-### Defining Users
+# Defining Users
 
 {: .note }
 This section only applies if you're using the default user authentication

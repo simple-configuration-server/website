@@ -12,9 +12,9 @@ You can use the SCS the in the following ways:
 1. By deploying Docker containers using the official SCS Docker Image
 2. By cloning this repository and running SCS locally
 
-Because of it's simplicitly and ease of updating, deploying SCS using Docker
-is the preferred method. Local installation is not recommended for anything
-other than running tests and debugging.
+Because of it's simplicitly and ease of updating, deploying SCS using a Docker
+image is the preferred method. Local installation is not recommended for
+anything other than running tests and debugging.
 
 In addition to deploying SCS, you can also use logging agents to stream the
 logs to a central logging database.

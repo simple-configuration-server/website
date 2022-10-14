@@ -7,14 +7,18 @@ nav_order: 2
 parent: Extensions
 ---
 # YAML Constructors
-All YAML constructors must inherit from the SCSYamlTagConstructor class. SCS
-adds the the following attributes to a loader that's passed to construct
-method:
+All YAML constructors must inherit from the scs.yaml.SCSYamlTagConstructor
+class. SCS adds the the following attributes to a loader that's passed to
+the `construct()` method:
 * `.resave` (bool): If during parsing you edit some part of the JSON, set this to
   `True` inside your constructor, to indicate the parsed data should be saved
   back to the file after loading.
 * `.filepath` (pathlib.Path): Use this inside your constructor to for example
   parse relative paths.
+
+{: .note}
+If you set `.resave = True`, the parsed data is saved back to the file, meaning
+any additional whitespace or comments from the original file will be lost
 
 Below is a simple example of a custom YAML constructor:
 
