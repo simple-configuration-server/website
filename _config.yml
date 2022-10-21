@@ -6,6 +6,10 @@ theme: "just-the-docs"
 
 plugins:
   - jekyll-sitemap
+  # The below is needed to fix an issue with just-the-docs. It uses
+  # jekyll-seo-tag anyway, regardless if it's listed as a plugin here. When not
+  # explicitly defined as a plugin, the title element is added twice
+  - jekyll-seo-tag
 
 defaults:
   # Exclude Google verification html from sitemap
