@@ -10,6 +10,7 @@ plugins:
   # jekyll-seo-tag anyway, regardless if it's listed as a plugin here. When not
   # explicitly defined as a plugin, the title element is added twice
   - jekyll-seo-tag
+  - jekyll-last-modified-at # To show modified date in sitemaps, from GIT log
 
 defaults:
   # Exclude Google verification html from sitemap
