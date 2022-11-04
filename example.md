@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Example"
-description: "An illustration of SCS features"
+description: "Using an example the basic features and configuration of SCS is shown"
 permalink: "/example"
 nav_order: 2
 ---

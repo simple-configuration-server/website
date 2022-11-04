@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Deployment"
-description: "Describes considerations for deploying the SCD"
+description: "You can deploy SCS using as a Docker container"
 permalink: "/docs/deployment"
 nav_order: 3
 parent: Documentation

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Config Directory"
-description: "Describes the layout of the Config Directory"
+description: "The Config directory of SCS contains all endpoints and configuration file templates"
 permalink: "/docs/server-configuration/config-directory"
 nav_order: 2
 grand_parent: Documentation
