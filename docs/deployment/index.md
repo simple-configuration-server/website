@@ -3,7 +3,7 @@ layout: default
 title: "Deployment"
 description: "Describes considerations for deploying the SCD"
 permalink: "/docs/deployment"
-nav_order: 2
+nav_order: 3
 parent: Documentation
 has_children: true
 ---

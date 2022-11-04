@@ -11,12 +11,10 @@ has_children: true
 To serve your configuration files/variables using SCS you need:
 
 1. The scs-configuration.yaml file, containing the settings of SCS
-1. A config directory, containing the files/templates that should be served
-2. A common directory, containing yaml files with common configuration elements
+2. A config directory, containing the files/templates that should be served
+3. A common directory, containing yaml files with common configuration elements
    (Can be empty)
-3. A secrets directory, containing secrets, such as passwords, used in
+4. A secrets directory, containing secrets, such as passwords, used in
    configuration files (Optional)
-4. scs-users.yaml, containing SCS user definitions (Optional; Only if the
+5. scs-users.yaml, containing SCS user definitions (Optional; Only if the
    built-in auth module is used)
-5. scs-validate.yaml, containing the validation script settings (Optional; Only
-   if validate.py is used to validate the configuration)

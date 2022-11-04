@@ -1,25 +1,34 @@
 ---
 layout: default
-title: "Validation Script Config"
-description: "Use the scs-users.yaml file to define user accounts your deployment"
-permalink: "/docs/server-configuration/validation-script-configuration"
-nav_order: 5
-grand_parent: Documentation
-parent: Server Configuration
+title: "Configuration Validation"
+description: "Use the validate.py script and scs-validate.yaml to validate SCS configurations"
+permalink: "/docs/configuration-validation"
+nav_order: 2
+parent: Documentation
 ---
-# Validation Script Configuration
+# Configuration Validation
+The official Docker images include the 'validate.py' script, that let's you
+validate your SCS configuration (for example inside a GIT repository) without
+secrets present.
 
-{: .note }
-The 'scs-validate.yaml' file described on this page is only needed if you're
-planning to run the [validate.py script](https://github.com/simple-configuration-server/simple-configuration-server/blob/main/docker/validate.py) from the docker image. For an example of how to use the validate.py script to test
-your configuration, please see the [githook](https://github.com/simple-configuration-server/example-configuration/blob/main/.githooks/pre-commit)
-and/or the [GitHub Workflow](https://github.com/simple-configuration-server/example-configuration/blob/main/.github/workflows/main.yml)
-in the 'example-configuration' repository.
+## 1 Running validate.py
+Like with the normal server, you only need to set the `SCS_CONFIG_DIR` variable
+to the directory containing your 'scs-configuration.yaml'. Optionally, you can
+add a 'scs-validate.yaml' configuration file to this directory, that defines
+configuration options for the validation script (See [section 2](#2-scs-validateyaml-configuration-file)
+below)
 
+The script is meant to be run from inside the official SCS docker container,
+to which you've either mounted your configuration using Docker volumes or
+bind-mounts, or from which you've build an image that includes your
+configuration.
 
-If you're planning to use the validation script in your CI/CD pipeline or
-inside githooks, you can create the (optional) 'scs-validate.yaml' file, of
-which an example is provided below:
+An example of running the validation script in case of the latter, can be
+found in the [GitHub Workflow](https://github.com/simple-configuration-server/example-configuration/blob/main/.github/workflows/main.yml)
+for the example-configuration repository.
+
+## 2 scs-validate.yaml Configuration File
+An example of the contents of a 'scs-validate.yaml' file is provided below:
 ```yaml
 endpoints:  # See section 1 below
   /configs/cluster_name: false
@@ -64,8 +73,6 @@ handle_errors: false
 allow_secrets: false
 ```
 The full schema for this file can be found [here](docker/scs-validate.SCHEMA.yaml).
-You need to put this file in the folder used for the SCS_CONFIG_DIR environment
-variable, just like the 'scs-configuration.yaml'.
 
 {: .note }
 Since all properties in this file are optional, validate.py can
@@ -80,7 +87,7 @@ Set `allow_secrets` to true, in case the configuration you're testing includes
 secrets. Note that this is not advised, and therefore this is set to 'false' by
 default.
 
-# 1 Endpoints
+### 2.1 Endpoints
 The `endpoints` property allows you to define test/validation
 configurations for one or more endpoints. Just like with the 'from_paths' of
 scs-users.yaml, wildcards can be used to define endpoints. Note that if
@@ -100,7 +107,7 @@ pattern), (2) the Content-Type response header is validated (general pattern)
 and (3) the contents are compared to the object given for
 the 'yaml:' key (specific pattern).
 
-## 2 SCS Configuration
+### 2.2 SCS Configuration
 The `scs_configuration` property allows you to override parts of
 'scs-configuration.yaml' during validation. The following changes are
 applied by default:

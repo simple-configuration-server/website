@@ -8,7 +8,12 @@ grand_parent: Documentation
 parent: Server Configuration
 ---
 # Server Configuration File
-The scs-configuration.yaml file defines the configuration of the server itself.
+Before starting the server, you must create a 'scs-configuration.yaml' file
+containing the server configuration, and set the `SCS_CONFIG_DIR` environment
+variable to point to the directory that contains the file. This page describes
+the format of the 'scs-configuration.yaml' file, and the available
+configuration options therein.
+
 The following is an example of a complete configuration:
 ```yaml
 directories:  # See the pages under 'Server Configuration' for each directory
