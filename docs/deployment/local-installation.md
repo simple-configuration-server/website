@@ -41,7 +41,6 @@ Then:
    export PYTHONPATH=$(pwd)
    # Choose appropriate directories, make sure they exist
    export SCS_CONFIG_DIR=/etc/scs
-   export SCS_LOG_DIR=/var/log/scs
    # Now start the app from uWSGI
    cd .local
    uwsgi -s /tmp/scs.sock --manage-script-name --mount /=app:app
