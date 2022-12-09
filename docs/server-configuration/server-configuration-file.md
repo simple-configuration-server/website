@@ -18,7 +18,7 @@ The following is an example of a complete configuration:
 ```yaml
 directories:  # See the pages under 'Server Configuration' for each directory
   common: !scs-expand-env ${SCS_CONFIG_DIR}/common
-  config: !scs-expand-env ${SCS_CONFIG_DIR}/config
+  endpoints: !scs-expand-env ${SCS_CONFIG_DIR}/endpoints
   secrets: &secrets-dir !scs-expand-env ${SCS_CONFIG_DIR}/secrets
 
 environments:  # See section 1 below
@@ -103,7 +103,7 @@ to specify new values for these. Setting an empty object for this will still
 cause the default settings to be applied. If you need to use alternative
 rendering_options for specific endpoints, you can also define
 `template.rendering_options` in scs-env.yaml files, which will update any
-globally defined rendering options for specific endpoints ([More info](/config-directory.html#1-scs-envyaml-files)).
+globally defined rendering options for specific endpoints ([More info](/endpoints-directory.html#1-scs-envyaml-files)).
 
 ## 3 Logs Configuration
 The SCS creates 2 types of logs:

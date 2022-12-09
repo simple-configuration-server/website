@@ -11,7 +11,7 @@ has_children: true
 To serve your configuration files/variables using SCS you need:
 
 1. The scs-configuration.yaml file, containing the settings of SCS
-2. A config directory, containing the files/templates that should be served
+2. An endpoints directory, containing the files/templates that should be served
 3. A common directory, containing yaml files with common configuration elements
    (Can be empty)
 4. A secrets directory, containing secrets, such as passwords, used in

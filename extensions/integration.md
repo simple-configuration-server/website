@@ -7,37 +7,42 @@ nav_order: 1
 parent: Extensions
 ---
 # Integration
-From you extension, you can use various core-features of the SCS, to make sure
-your extension fully integrates with existing SCS deployments. Use the
-core [scs.errors](https://github.com/simple-configuration-server/simple-configuration-server/blob/main/scs/errors.py)
-module to ensure any errors can be understood by the users and use the
-[scs.logging](https://github.com/simple-configuration-server/simple-configuration-server/blob/main/scs/logging.py)
-module to ensure all relevant events are logged inside the SCS logs.
+SCS extends the Flask app object with several functions for defining
+standardized responses in case errors or exceptions occur and functions to
+register audit events from an extension, such as a blueprint. Application logs
+can be generated from any part of the code using the built-in python
+logging package.
+
+{: .note}
+The functions for registering errors, exceptions and audit events are linked
+to the Flask app object. As illustrated in the examples, these are mainly
+designed to be used from inside Flask Blueprints. It's possible to use these in
+other extension types also, but you'd have to use the flask.current_app object
+that's available during a request and add code to register your errors,
+exceptions or audit events when your extension is used the first time.
 
 ## 1 Custom Error Responses
-Use the [scs.errors](https://github.com/simple-configuration-server/simple-configuration-server/blob/main/scs/errors.py)
-module inside your extension to add
-custom error responses to SCS. There are 2 types of errors that can be
-registered with the scs.errors module:
-1. Errors based on response codes and error IDs, triggered using `abort()`
-2. Errors based on Exceptions raised in the code
-
-You can use the first type to explicitly return errors for certain conditions,
-by:
-1. Registering the status code, error id and error message combination
-   with the scs.errors module:
+Use the `app.scs.register_error()` function to define custom JSON error
+responses that are returned in case a specific HTTP status code is generated.
+An example implementation:
+1. Register the status code, error id and error message combination
+   when the blueprint is initialized:
     
    ```python
-   from scs import errors
+   from flask import BluePrint
 
-   errors.register(
-       code=429,
-       id_='auth-rate-limited',
-       message='Rate limited due to too many false auth attempts from this ip',
-   )
+   bp = Blueprint('test', 'test')
+
+   @bp.record
+   def init(setup_state):
+      setup_state.app.scs.register_error(
+          code=429,
+          id_='auth-rate-limited',
+          message='Rate limited due to too many false auth attempts from this ip',
+      )
    ```
 
-2. Using the flask.abort function somewhere in your code:
+2. Use the flask.abort function somewhere in your code:
    
    ```python
    from flask import abort
@@ -45,22 +50,28 @@ by:
    abort(429, description={'id': 'auth-rate-limited'})
    ```
 
-The second option is to capture exceptions that are raised inside the code, and
-return a 500 error message with an explaination:
+Additionally, use the `app.scs.register_exception()` function to ensure
+informational error messages are returned, in case specific exceptions are
+raised during request processing. An example implementation:
 1. Create a custom error class (optional) and register it (or alternatively,
    register existing exceptions):
     
    ```python
+   from flask import BluePrint
    from scs import errors
 
    class CustomException(Exception):
        pass
 
-   errors.register_exception(
-       exception_class=CustomException,
-       id_='custom-exception-occurred',
-       message='A custom exception occured'
-   )
+   bp = Blueprint('test', 'test')
+
+   @bp.record
+   def init(setup_state):
+      setup_state.app.scs.register_exception(
+          exception_class=CustomException,
+          id_='custom-exception-occurred',
+          message='A custom exception occured'
+      )
    ```
 
 2. Raise the exception:
@@ -81,21 +92,23 @@ at the [SCS source code](https://github.com/simple-configuration-server/simple-c
 since errors and exceptions are registered by multiple built-in SCS modules.
 
 ## 2 Logging
-Use the [scs.logging](https://github.com/simple-configuration-server/simple-configuration-server/blob/main/scs/logging.py) inside your extension to:
-1. Log custom audit events
-2. Log to the SCS application log
+Use the `app.scs.register_audit_event()` function to register audit events at
+initialization, after which you can log them for each request. An example:
 
-To log custom audit events:
 1. Add a custom audit event:
 
    ```python
-   from scs import logging
+   from flask import BluePrint
 
-   logging.register_audit_event(
-       type_="custom-audit-event",
-       level='INFO',
-       message_template="User '{user}' has done {terrible_thing}"
-   )
+   bp = Blueprint('test', 'test')
+
+   @bp.record
+   def init(setup_state):
+      setup_state.app.scs.register_audit_event(
+          type_="custom-audit-event",
+          level='INFO',
+          message_template="User '{user}' has done {terrible_thing}"
+      )
    ```
 
 2. Use the 'add_audit_event' function added to the Flask.g object while

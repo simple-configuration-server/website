@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Config Directory"
-description: "The Config directory of SCS contains all endpoints and configuration file templates"
-permalink: "/docs/server-configuration/config-directory"
+title: "Endpoints Directory"
+description: "The endpoints directory of SCS contains all endpoint configurations and templates"
+permalink: "/docs/server-configuration/endpoints-directory"
 nav_order: 2
 grand_parent: Documentation
 parent: Server Configuration
@@ -10,14 +10,14 @@ parent: Server Configuration
 # Config Directory
 
 {: .highlight }
-Use the 'directories.config' variable inside scs-configuration.yaml to set
+Use the 'directories.endpoints' variable inside scs-configuration.yaml to set
 the location of this directory
 
 The contents of this directory are served by the SCS, with the exception of
 files with names that end with 'scs-env.yaml'. These files contain
 configuration variables for specific endpoints, or entire directories.
 The URL structure of your SCS deployment is derived from the folder structure
-inside the config directory.
+inside the endpoints directory.
 
 ## 1 *scs-env.yaml Files
 Although scs-env.yaml files are optional, they allow you to configure the
@@ -55,12 +55,12 @@ response:
 These files should adhere to the schema found [here](https://github.com/simple-configuration-server/simple-configuration-server/blob/main/scs/schemas/scs-env.yaml),
 which also includes more extensive descriptions of each property. Note that
 this schema also defines the defaults for each property, used when properties
-are not defined. All properties in scs-env files are optional, but empty
+are missing. All properties in scs-env files are optional, but empty
 scs-env files should be omitted.
 
-In case you simply want to host the files in your config directory,
+In case you simply want to host the files in your endpoints directory,
 without using any of the templating features, you can place the
-following scs-env.yaml file in the root of the config dir:
+following scs-env.yaml file in the root of the endpoints directory:
 ```yaml
 template:
   enabled: false
@@ -133,9 +133,9 @@ response:
 ```
 
 ## 2 URL structure
-All files inside the config directory of which the names do not end with
+All files inside the endpoints directory of which the names do not end with
 'scs-env.yaml', are used as server endpoints. These files are served under the
-/configs/ urls. The example file structure above would expose
+/configs/ url path. The example file structure above would expose
 the following endpoints:
 ```
 /configs/root_endpoint.json
