@@ -170,9 +170,9 @@ template:
     database: !scs-common 'global.yaml#database'
     username: !scs-secret 'database-users.yaml#[0].username'
     password: !scs-secret 'database-users.yaml#[1].password'
-  response:
-    headers:
-      Content-Type: application/json
+response:
+  headers:
+    Content-Type: application/json
 ```
 </details>
 

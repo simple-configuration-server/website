@@ -7,7 +7,7 @@ nav_order: 2
 grand_parent: Documentation
 parent: Server Configuration
 ---
-# Config Directory
+# Endpoints Directory
 
 {: .highlight }
 Use the 'directories.endpoints' variable inside scs-configuration.yaml to set
