@@ -28,7 +28,7 @@ version: "3.9"
 
 services:
   server:
-    image: ghcr.io/simple-configuration-server/simple-configuration-server:2.0.0
+    image: ghcr.io/simple-configuration-server/simple-configuration-server:2.0.1
     volumes:
       # If all configuration, except secrets, are in a repository:
       - ./configuration-repository/configuration:/etc/scs/configuration

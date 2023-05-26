@@ -20,7 +20,7 @@ locally. Below is a basic example of using uWSGI to run the application.
 You will need:
 
 * A unix operating system (Windows should also work, but not with below steps)
-* Python 3.10 needs to be installed (Test using `python3.10 --version`)
+* Python 3.11 needs to be installed (Test using `python3.11 --version`)
 
 Then:
 1. Create a .local subdirectory: `mdkir -p .local`
